@@ -20,7 +20,7 @@ class DrawerItem extends React.Component {
             style={{ opacity: 0.5 }}
             />
         );
-      case 'Components':
+      case 'ExpenseList':
         return (
           <Icon
             name="atom2x"
@@ -29,7 +29,7 @@ class DrawerItem extends React.Component {
             style={{ opacity: 0.5 }}
             />
         );
-      case 'Home':
+      case 'IncomeDetail':
         return (
           <Icon
             name="paper"
@@ -100,24 +100,32 @@ class DrawerItem extends React.Component {
       styles.defaultStyle,
       focused ? [styles.activeStyle, styles.shadow] : null
     ];
-
-    return (
-      <Block flex row style={containerStyles}>
-        <Block middle flex={0.1} style={{ marginRight: 5 }}>
-          {this.renderIcon()}
+    if(title === 'Account'){
+      return(
+        <Block>
+          
         </Block>
-        <Block row center flex={0.9}>
-          <Text
-            style={{ fontFamily: 'montserrat-regular', textTransform: 'uppercase', fontWeight: '300' }}
-            size={12}
-            bold={focused ? true : false}
-            color={focused ? nowTheme.COLORS.PRIMARY : 'white'}
-          >
-            {title}
-          </Text>
+      );
+    }
+    else{
+      return (
+        <Block flex row style={containerStyles}>
+          <Block middle flex={0.1} style={{ marginRight: 5 }}>
+            {this.renderIcon()}
+          </Block>
+          <Block row center flex={0.9}>
+            <Text
+              style={{ fontFamily: 'montserrat-regular', textTransform: 'uppercase', fontWeight: '300' }}
+              size={12}
+              bold={focused ? true : false}
+              color={focused ? nowTheme.COLORS.PRIMARY : 'white'}
+            >
+              {title}
+            </Text>
+          </Block>
         </Block>
-      </Block>
-    );
+      );
+    }
   }
 }
 

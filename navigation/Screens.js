@@ -13,6 +13,7 @@ import Home from '../screens/Home';
 import ExpenseListScreen from '../screens/ExpenseList';
 
 // drawer
+import Menu from './Menu';
 import DrawerItem from '../components/DrawerItem';
 
 // header for screens
@@ -60,7 +61,7 @@ const ExpenseDetailStack = createStackNavigator(
     ExpenseDetail: {
       screen: ExpenseDetailScreen,
       navigationOptions: ({ navigation }) => ({
-        header: <Header transparent back title="Corp App - Expense" navigation={navigation} />
+        header: <Header transparent title="Corp App - Expense" navigation={navigation} />
       })
     }
   },
@@ -91,7 +92,7 @@ const HomeStack = createStackNavigator(
       screen: Home,
       navigationOptions: ({ navigation }) => ({
         header: (
-          <Header transparent title="Corp App - Home" navigation={navigation} />
+          <Header transparent back title="Corp App - Home" navigation={navigation} />
         ),
         headerTransparent: true
       })
@@ -111,7 +112,7 @@ const IncomeDetailStack = createStackNavigator(
       screen: IncomeDetail,
       navigationOptions: ({ navigation }) => ({
         header: (
-          <Header transparent back title="Crop App - Income" iconColor={'#FFF'} navigation={navigation} />
+          <Header transparent title="Crop App - Income" iconColor={'#FFF'} navigation={navigation} />
         ),
         headerTransparent: true
       })
@@ -184,6 +185,7 @@ const AppStack = createDrawerNavigator(
       })
     },
   },
+  Menu
 );
 
 const AppContainer = createAppContainer(AppStack);

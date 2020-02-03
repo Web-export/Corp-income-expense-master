@@ -22,23 +22,7 @@ const Drawer = props => (
     <Block flex>
       <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
         <DrawerNavigatorItems {...props} />
-        <Block flex style={{ marginTop: 24, marginVertical: 8, paddingHorizontal: 8 }}>
-          <Block
-            style={{ borderColor: 'white', width: '93%', borderWidth: StyleSheet.hairlineWidth, marginHorizontal: 10}}
-          />
-          <Text
-            color={nowTheme.COLORS.WHITE}
-            style={{ marginTop: 30, marginLeft: 20, marginBottom: 10, fontFamily: 'montserrat-regular', fontWeight: '300', fontSize: 12}}
-          >
-            DOCUMENTATION
-          </Text>
-        </Block>
-        <TouchableOpacity onPress={() => props.navigation.navigate('Onboarding')}
-          style={{ marginLeft: 10, fontFamily: 'montserrat-regular' }}
-        >
-          <DrawerItem {...props} title="GETTING STARTED" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => props.navigation.navigate('Onboarding')}
+        <TouchableOpacity onPress={() => props.navigation.navigate('Account')}
           style={{ marginLeft: 10, fontFamily: 'montserrat-regular' }}
         >
           <DrawerItem {...props} title="LOGOUT" />
