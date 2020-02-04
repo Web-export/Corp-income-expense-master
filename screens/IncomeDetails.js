@@ -66,21 +66,22 @@ class IncomeDetail extends React.Component {
               doctype: "Journal Entry Account",
               account: selectedItem,
               credit: amount,
-              credit_in_account_currency: "11"
+              credit_in_account_currency: amount
             },
             {
               doctype: "Journal Entry Account",
               account: "8552 - TRAVEL EXPENSES - BUS OR VEHICLE CHARGES - LOCAL - NU",
-              debit_in_account_currency: "11",
-              debit: "11"
+              debit_in_account_currency: amount,
+              debit: amount
             }
           ],
           posting_date: date,
-          total_debit: "11",
-          total_credit: "11",
+          total_debit: amount,
+          total_credit: amount,
           difference: 0,
           user_remark: "Test Entry",
-          workflow_state: "Approved"
+          workflow_state: "Approved",
+          voucher_type: "Direct Income"
         })
       })
         .then((response) => {
